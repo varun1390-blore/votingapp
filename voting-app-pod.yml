@@ -5,7 +5,7 @@ metadata:
   labels:
     name: voting-app-pod
     app: demo-voting-app
-Spec:
+spec:
   containers:
   - name: voting-app-pod
     image: docker pull dockersamples/examplevotingapp_vote
