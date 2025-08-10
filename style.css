@@ -1,0 +1,123 @@
+:root {
+  --bg1: #f6d1e0; /* pastel pink */
+  --bg2: #d7e8f7; /* pastel blue */
+  --text: #1f2937;
+  --muted: #6b7280;
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  background-attachment: fixed;
+}
+
+.app {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.quote-card {
+  width: min(820px, 92vw);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.quote-text {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.4rem, 2.2vw + 1rem, 2.4rem);
+  line-height: 1.35;
+  font-weight: 400;
+  margin: 10px 0 14px;
+  opacity: 0;
+}
+
+.quote-author {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 28px;
+  opacity: 0;
+}
+
+.button {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #111827;
+  padding: 12px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.16);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  color: #374151;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.meta {
+  margin-top: 4px;
+}
+
+.fade-in {
+  animation: fadeIn 600ms ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 420px) {
+  .quote-card {
+    padding: 28px 22px;
+  }
+  .button {
+    width: 100%;
+  }
+}
